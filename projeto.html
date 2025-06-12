@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente de Remarketing</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS completo da sua página... */
+        :root {
+            --primary-bg: #021124;
+            --secondary-bg: #06275A;
+            --accent: #5482B4;
+            --light-accent: #7EA0C5;
+            --text-primary: #C3E9FE;
+            --text-secondary: #7EA0C5;
+            --card-bg: rgba(6, 39, 90, 0.5);
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 20px rgba(84, 130, 180, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: var(--secondary-bg);
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--accent); }
+
+        nav { display: flex; gap: 2rem; align-items: center; /* Adicionado para alinhar ícones */ }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        nav a:hover { color: var(--light-accent); }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after { width: 100%; }
+
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+        
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+        .tech-tag {
+            background-color: rgba(84, 130, 180, 0.2);
+            color: var(--light-accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        footer {
+            background-color: var(--secondary-bg);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .contact-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+
+        .contact-links a { color: var(--text-primary); font-size: 1.8rem; transition: var(--transition); }
+
+        .contact-links a:hover { color: var(--accent); transform: translateY(-5px); }
+
+        .copyright { color: var(--text-secondary); font-size: 0.9rem; }
+        
+        .project-page-container { padding-top: 80px; }
+
+        .project-iframe-container { display: flex; justify-content: center; padding: 4rem 5%; background-color: var(--primary-bg); }
+
+        .project-iframe-container iframe {
+            width: 100%;
+            max-width: 1200px;
+            height: 75vh;
+            border: 1px solid var(--accent);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .project-details { padding: 4rem 5%; background-color: rgba(2, 17, 36, 0.7); }
+
+        .project-details h2 { font-size: 2.5rem; margin-bottom: 2rem; position: relative; padding-bottom: 0.8rem; color: var(--text-primary); }
+
+        .project-details h2::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 80px; height: 4px; background: var(--accent); border-radius: 2px;
+        }
+
+        .project-details p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; max-width: 800px; }
+
+        .project-details h3 { font-size: 1.5rem; color: var(--text-primary); margin-top: 3rem; margin-bottom: 1.5rem; }
+        
+        .section-content { max-width: 1000px; margin: 0 auto; }
+        
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary-bg);
+                flex-direction: column;
+                align-items: center;
+                padding: 1.5rem 0;
+                gap: 1.2rem;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: var(--transition);
+            }
+            nav.active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">Aphex<span>Rage</span></a>
+        
+        <nav id="nav">
+            <a href="index.html">Início</a>
+            <a href="https://www.linkedin.com/in/gustavo-mendes-dos-santos-117767250/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/aphexrage" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        </nav>
+        
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <main class="project-page-container">
+        <section class="project-iframe-container">
+            <iframe 
+                src="/?embed=true"
+                frameborder="0"
+                title="Dashboard do Projeto">
+            </iframe>
+        </section>
+
+        <section class="project-details section-content">
+            <h2>Sobre o Projeto</h2>
+            <p>
+                Este projeto consiste em um agente de remarketing inteligente que analisa o histórico de compras dos clientes 
+                para segmentá-los em perfis específicos. Com base nesses perfis, o sistema dispara campanhas de e-mail 
+                marketing personalizadas e automáticas.
+            </p>
+            <h3>Tecnologias Utilizadas</h3>
+            <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Streamlit</span>
+                <span class="tech-tag">SQL</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-links">
+            <a href="https://www.linkedin.com/in/gustavo-mendes-dos-santos-117767250/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/aphexrage" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p class="copyright">© 2025 AphexRage. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                menuToggle.innerHTML = nav.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+        }
+        
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '0.8rem 5%';
+                header.style.boxShadow = '0 5px 20px rgba(2, 17, 36, 0.8)';
+            } else {
+                header.style.padding = '1.2rem 5%';
+                header.style.boxShadow = '0 4px 20px rgba(84, 130, 180, 0.3)';
+            }
+        });
+    </script>
+</body>
+</html>
