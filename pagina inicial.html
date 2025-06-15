@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="pagina inicial.css">
+  <link rel="icon" type="image/png" href="assets\icone.png"
+</head>
+<body>
+  <header>
+    <div class="logo">Aphex<span>Rage</span></div>
+    <nav id="nav">
+      <a href="#hero">Início</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#about">Sobre Mim</a>
+      <a href="#projects">Projetos</a>
+      <a href="#experience">Experiência</a>
+      <a href="https://www.linkedin.com/in/gustavo-mendes-dos-santos-117767250/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/aphexrage" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </nav>
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <!-- Fundo video
+    <video class="video-background" autoplay muted loop>
+      <source src="./assets/video.mp4" type="video/mp4">
+      Seu navegador não suporta video.
+    </video>
+    -->
+    <img src="./assets/fundo.gif" alt="Fundo animado" class="gif-background">
+
+    
+    <div class="container">
+      <div class="intro">
+        <h1>Oi, sou o <span>Gusta!</span></h1>
+        <p>Sou apaixonado por conectar tecnologia, dados e impacto real nas pessoas. Transformo problemas complexos em soluções eficientes.</p>
+        <a href="#projects" class="btn">Ver meus projetos</a>
+      </div>
+      <div class="photo">
+        <div class="photo-container">
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQGFkfXmQqpUyQ/profile-displayphoto-shrink_400_400/B4DZaOTyoAGgAg-/0/1746144275344?e=1755129600&v=beta&t=cCEJAxjGDdPOTwHtAYVbynqgUoJgmDzu-d3mg-rKVws" alt="Gusta - Desenvolvedor">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <h2>Minhas Habilidades</h2>
+    <div class="logos">
+      <div class="logo-box">
+        <i class="fab fa-python"></i>
+        <h3>Python</h3>
+      </div>
+      <div class="logo-box">
+        <i class="fas fa-chart-bar"></i>
+        <h3>Power BI</h3>
+      </div>
+      <div class="logo-box">
+        <i class="fas fa-database"></i>
+        <h3>SQL</h3>
+      </div>
+      <div class="logo-box">
+        <i class="fas fa-cloud"></i>
+        <h3>Azure</h3>
+      </div>
+      <div class="logo-box">
+        <i class="fab fa-ubuntu"></i>
+        <h3>Ubuntu</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-content">
+      <h2>Sobre Mim</h2>
+      <p>Tenho 20 anos, estou cursando Análise e Desenvolvimento de Sistemas e já atuei em projetos de engenharia e análise de dados, criando dashboards com Power BI e Python, criei diversas soluções voltadas à melhoria de processos.</p>
+      <p>Tive experiência internacional na Unilever, interagindo com equipes da América Latina, America do Norte e Europa. Reuniões em inglês e espanhol, o que fortaleceu minha comunicação, visão analítica e atuação em ambientes multiculturais.</p>
+      <p>Sou criativo, motivado por desafios e sempre em busca de novas formas de resolver problemas com inovação. Gosto de trabalhar de forma colaborativa e tenho grande capacidade de adaptação para novos cenários.</p>
+    </div>
+  </section>
+<section class="projects" id="projects">
+  <div class="section-content">
+    <h2>Meus Projetos</h2>
+
+    <div class="projects-grid">
+
+      <a href="projeto.html" class="project-link">
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-gear"></i>
+          </div>
+          <div class="project-content">
+            <h3>Agente de Remarketing + Dashboard</h3>
+            <p>Dashboard com envio automático de e-mails baseados no perfil de compras dos clientes.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">SQL</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="seu-link-aqui-2.html" class="project-link">
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="project-content">
+            <h3>Assistente com IA</h3>
+            <p>Chatbot inteligente com IA (LLaMA3 + FAISS) e envio automático de e-mails. Interface em Streamlit com dados reais da empresa.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">LangChain</span>
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">Streamlit</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      
+      <a href="seu-link-aqui-3.html" class="project-link">
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-cart-shopping"></i>
+          </div>
+          <div class="project-content">
+            <h3>ETL Financeiro + Dashboard</h3>
+            <p>ETL financeiro com dados da YFinance, tratamento no Microsoft Fabric e dashboards interativos no Power BI.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Microsoft Fabric</span>
+              <span class="tech-tag">YFinance</span>
+              <span class="tech-tag">Power BI</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="section-content">
+    <h2>Experiência Profissional</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Aprendiz de Engenharia de Dados / TI – Unilever</h3>
+          <span class="date">Agosto 2024 - Presente</span>
+          <p> Ao longo da minha trajetória como Aprendiz na Unilever, atuei em três áreas distintas: infraestrutura de redes, operações da Kibon e engenharia de dados. Contribuí com projetos de modernização de redes na América Latina, desenvolvimento de dashboards (inclusive 3D) e automação de processos com Streamlit. Atualmente, foco na organização e tratamento de dados, criação de assistentes inteligentes com Python e Llama3, além de dashboards interativos para suporte à tomada de decisões, colaborando com equipes globais.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <footer>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/gustavo-mendes-dos-santos-117767250/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/aphexrage" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <p class="copyright">© 2025 AphexRage. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      menuToggle.innerHTML = nav.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          if (nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+          }
+        }
+      });
+    });
+    
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.padding = '0.8rem 5%';
+        header.style.boxShadow = '0 5px 20px rgba(2, 17, 36, 0.8)';
+      } else {
+        header.style.padding = '1.2rem 5%';
+        header.style.boxShadow = '0 4px 20px rgba(84, 130, 180, 0.3)';
+      }
+    });
+  </script>
+</body>
+</html>
