@@ -21,7 +21,7 @@
 Este repositório contém meu portfólio, desenvolvido com HTML, CSS e JavaScript, onde apresento projetos que criei para demonstrar minhas habilidades.
 
 <div align="center">
-  <a href="https://aphexrage.github.io/Meu-portfolio/" target="_blank">
+  <a href="https://aphexrage.github.io/gusta-portfolio/" target="_blank">
     <img src="https://img.shields.io/badge/Link para o Portfólio-blue" />
   </a>
 </div>
