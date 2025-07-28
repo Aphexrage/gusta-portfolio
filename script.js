@@ -38,7 +38,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Script do Chatbot
 const toggler = document.getElementById('goibot-toggler');
 const closeBtn = document.getElementById('goibot-close');
 const frame = document.getElementById('goibot-frame');
@@ -86,51 +85,41 @@ setInterval(() => {
   }
 }, 30000);
 
-// Adicione este código ao seu script.js existente
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Elementos das seções de habilidades
   const dataSkillsSection = document.querySelector('.skills h2:first-of-type');
   const dataSkillsLogos = document.querySelector('.logos:first-of-type');
   const devSkillsSection = document.querySelector('.skills h2:nth-of-type(2)');
   const devSkillsLogos = document.querySelector('.logos:nth-of-type(2)');
   
-  // Botões
   const devButton = document.getElementById('button-dev');
   const dataButton = document.getElementById('button-data');
   
-  // Função para mostrar habilidades de desenvolvimento
   function showDevSkills() {
     dataSkillsSection.style.display = 'none';
     dataSkillsLogos.style.display = 'none';
     devSkillsSection.style.display = 'block';
     devSkillsLogos.style.display = 'flex';
     
-    // Atualizar estado dos botões
     devButton.classList.add('active');
     dataButton.classList.remove('active');
   }
   
-  // Função para mostrar habilidades de dados
   function showDataSkills() {
     devSkillsSection.style.display = 'none';
     devSkillsLogos.style.display = 'none';
     dataSkillsSection.style.display = 'block';
     dataSkillsLogos.style.display = 'flex';
     
-    // Atualizar estado dos botões
     dataButton.classList.add('active');
     devButton.classList.remove('active');
   }
   
-  // Event listeners para os botões
   devButton.addEventListener('click', showDevSkills);
   dataButton.addEventListener('click', showDataSkills);
   
-  // Mostrar habilidades de dados por padrão
-  showDataSkills();
+  showDevSkills();
   
-  // Adicionar estilos para botão ativo
   const style = document.createElement('style');
   style.textContent = `
     .btn2.active {
